@@ -7,8 +7,17 @@ import { Label } from '@/components/ui/label';
 import { Search, ExternalLink, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+interface SEOAnalysisData {
+  url: string;
+  keywords: string[];
+  score: number;
+  issues: string[];
+  improvements: string[];
+  timestamp: string;
+}
+
 interface SEOAnalysisFormProps {
-  onAnalysis: (data: any) => void;
+  onAnalysis: (data: SEOAnalysisData) => void;
   isAnalyzing: boolean;
 }
 
@@ -30,7 +39,7 @@ const SEOAnalysisForm: React.FC<SEOAnalysisFormProps> = ({ onAnalysis, isAnalyzi
     }
 
     // Basic URL validation
-    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
     if (!urlPattern.test(url)) {
       toast({
         title: "Invalid URL",

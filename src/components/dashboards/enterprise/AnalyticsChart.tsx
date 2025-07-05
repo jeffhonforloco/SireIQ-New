@@ -38,7 +38,7 @@ const AnalyticsChart: React.FC<AnalyticsChartProps> = ({
   const generateData = (timeframe: 'day' | 'week' | 'month') => {
     setLoading(true);
     
-    let newData: DataPoint[] = [];
+    const newData: DataPoint[] = [];
     let points: number;
     let format: string;
     

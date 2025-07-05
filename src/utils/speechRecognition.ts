@@ -8,7 +8,7 @@ export const initializeSpeechRecognition = (): {
 
   // Check if browser supports Web Speech API
   if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-    // @ts-ignore - TypeScript doesn't recognize webkitSpeechRecognition
+    // @ts-expect-error - TypeScript doesn't recognize webkitSpeechRecognition
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition = new SpeechRecognition();
     

@@ -141,7 +141,7 @@ const TryAdvancedAI = () => {
   const handleDownload = () => {
     let filename = `ai-generation-${Date.now()}`;
     let content = aiResult;
-    let type = 'text/plain';
+    const type = 'text/plain';
     
     if (aiMode === 'text') {
       filename += '.md';

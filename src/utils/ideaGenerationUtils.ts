@@ -187,7 +187,7 @@ export const generateCampaignIdeas = (
     return categoryIdeas.map(idea => {
       // Simple context integration - just append some relevant text
       const contextKeywords = context.toLowerCase().split(' ');
-      let customized = { ...idea };
+      const customized = { ...idea };
       
       // Modify description slightly based on context keywords
       if (contextKeywords.some(word => ['social', 'media', 'online'].includes(word))) {
